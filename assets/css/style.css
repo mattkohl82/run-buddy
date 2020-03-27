@@ -287,6 +287,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 
 .trainer img {
@@ -308,18 +309,93 @@ section {
 
 .trainer-bio h3 {
     font-size: 28px;
+    display: none;
 }
 
 .trainer-bio h4 {
     font-weight: lighter;
     font-size: 22px;
     margin-bottom: 15px;
+    display: none;
 }
 
 .trainer-bio p {
     font-size: 17px;
     
 }
+
+.trainer-1 {
+    background-image: url("../images/trainer-1.jpg");
+}
+
+.trainer-2 {
+    background-image: url("../images/trainer-2.jpg");
+}
+
+.trainer-3 {
+    background-image: url("../images/trainer-3.jpg");
+}
+
+.trainer-img {
+    width: 100%;
+    min-height: 300px;
+    background-size: cover;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.trainer-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(252, 225, 56, 0.30), var(--secondary-color));
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.trainer-img h3 {
+    position: relative;
+    z-index: 100;
+    font-size: 28px;
+    margin-bottom: 5px;
+    top: 200px;
+    transition: .6s;
+}
+
+.trainer-img h4 {
+    position: relative;
+    z-index: 100;
+    font-size: 22px;
+    top: 200px;
+    transition: .6s;
+}
+
+.trainer:hover .trainer-img::after {
+    opacity: 1;
+    background: linear-gradient(rgba(252, 225, 56, 0.20), var(--secondary-color));
+    transition: .5s;
+}
+
+.trainer:hover .trainer-img h4 {
+    top: 0px;
+    opacity: 1;
+} 
+
+.trainer:hover .trainer-img h3 {
+    top: 0px;
+    opacity: 1;
+}
+
+
+
+
 
 /* reach out styles start */
 .contact {
@@ -524,6 +600,8 @@ section {
 
 
 
+
+
 /* meadia query for smaller desktop screens and smaller */
 
 @media screen and (max-width: 980px) {
@@ -580,6 +658,16 @@ section {
 /* meadia query for tablets and smaller */
 
 @media screen and (max-width: 768px) {
+
+    .trainer-img h3, .trainer-img h4, .trainer-img::after {
+        display: none;
+    }
+
+    .trainer-bio h3, .trainer-bio h4 {
+        display: inline;
+    }
+
+
 
     section {
         padding: 30px 15px;
